@@ -32,6 +32,7 @@ public class NotificationService extends Service {
         Intent receiveDataIntent = new Intent("receiveDataIntent");
         receiveDataIntent.putExtra(MainActivity.COMPLETE_DOWNLOAD, "Download complete");
         sendBroadcast(receiveDataIntent);
+        stopSelf();
         return START_NOT_STICKY;
     }
 

@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        stopService(new Intent(this, NotificationService.class));
         try{
             unregisterReceiver(broadcastReceiver);
         } catch (RuntimeException e){}
